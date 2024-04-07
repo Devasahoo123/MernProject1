@@ -14,7 +14,6 @@ app.use(cookieParser());
 app.use(Routes);
 app.use(cors({
     origin: "https://mern-project1-five.vercel.app",
-    preflightContinue: true
 }));
 
 // createDB();
