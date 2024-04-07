@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import img from '../images/logo3.jpeg'
 import { useNavigate } from 'react-router-dom';
+import { BACKEND_URL } from '../config/config';
 const About = () => {
 
   const history = useNavigate();
@@ -8,7 +9,7 @@ const About = () => {
 
   const callAboutPage=async()=>{
     try{
-      const res = await fetch('/about',{
+      const res = await fetch(BACKEND_URL + '/about',{
         method:"GET",
         headers:{
            Accept: "appllication/json",

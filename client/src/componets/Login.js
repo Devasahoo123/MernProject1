@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import login from '../images/login.jpeg'
 import { NavLink,useNavigate } from 'react-router-dom';
 import { UserContext } from '../App';
+import { BACKEND_URL } from '../config/config';
 
 function Login() {
 
@@ -13,7 +14,7 @@ function Login() {
   const loginUser=async(e)=>{
     e.preventDefault();
 
-    const res=await fetch('/signin',{
+    const res=await fetch(BACKEND_URL + '/signin',{
       method: "POST",
       headers:{
         "Content-Type":"application/json"

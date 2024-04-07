@@ -1,13 +1,14 @@
 import React, { useEffect,useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../App';
+import { BACKEND_URL } from '../config/config';
 
 const LogOut = () => {
   const {state,dispatch} = useContext(UserContext);
   const history = useNavigate();
   //promish
   useEffect(()=>{
-    fetch('/logout', {
+    fetch(BACKEND_URL + '/logout', {
       method: "GET",
       headers:{
         Accept: "application/json",

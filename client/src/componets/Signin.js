@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import signin from '../images/sign.jpeg'
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import { BACKEND_URL } from '../config/config';
 
 function Signin() {
     const history = useNavigate();
@@ -18,7 +19,7 @@ function Signin() {
 
         const {name, email, password, phone, work, cpassword} = user;
         console.log(user);
-        const res=await fetch("/register",{
+        const res=await fetch(BACKEND_URL + "/register",{
             method:'POST',
             headers:{
                 "Content-Type":"application/json"
