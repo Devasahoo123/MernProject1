@@ -7,12 +7,17 @@ import createDB from  './db/createDB.js';
 import cors from "cors";
 import cookieParser from 'cookie-parser';
 
+var corsOptions = {
+    origin: 'https://mern-project1-five.vercel.app/',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  }
+
 dotenv.config();
 connectToDB();
 const app = express();
 app.use(cookieParser());
 app.use(Routes);
-app.use(cors());
+app.use(cors(corsOptions));
 
 // createDB();
 
