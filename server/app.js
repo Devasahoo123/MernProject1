@@ -12,9 +12,7 @@ connectToDB();
 const app = express();
 app.use(cookieParser());
 app.use(Routes);
-app.use(cors({
-    origin: "*",
-}));
+app.use(cors());
 
 // createDB();
 
